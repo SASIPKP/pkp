@@ -1,25 +1,26 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<conio.h>
 
 int main()
 {
     int num;
     
     /* Input number from user */
-    printf("Enter any number: ");
+    printf("enter any number: ");
     scanf("%d", &num);
     
 
     if(num > 0)
     {
-        printf("Number is POSITIVE");
+        printf("number is positive");
     }
     if(num < 0)
     {
-        printf("Number is NEGATIVE");
+        printf("number is negative");
     }
     if(num == 0)
     {
-        printf("Number is ZERO");
+        printf("number is zero");
     }
 
     return 0;
