@@ -2,16 +2,16 @@
 #include<conio.h>
 int main()
 {
-    int number;
+    int Number;
 
-    printf("Enter an integer: ");
-    scanf("%d", &number);
+    printf("enter an integer: ");
+    scanf("%d", &Number);
 
     // True if the number is perfectly divisible by 2
-    if(number % 2 == 0)
-        printf("%d is even.", number);
+    if(Number % 2 == 0)
+        printf("%d is even.", Number);
     else
-        printf("%d is odd.", number);
+        printf("%d is odd.", Number);
 
     return 0;
 }
