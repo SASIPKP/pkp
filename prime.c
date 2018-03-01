@@ -2,7 +2,7 @@
 void main()
 {
 int a,b,flag,i;
- printf("enter the 2 limits");
+ printf("Enter the 2 limits");
  scanf("%d%d",&a,&b);
 while(a<b)
 {
