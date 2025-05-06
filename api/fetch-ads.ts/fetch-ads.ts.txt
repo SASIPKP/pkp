@@ -1,0 +1,23 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
+
+const API_KEY = process.env.AIRTABLE_API_KEY!;
+const BASE_ID = process.env.BASE_ID!;
+const TABLE_NAME = process.env.TABLE_NAME!;
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula={approved}=TRUE&sort[0][field]=created&sort[0][direction]=desc`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+      },
+    });
+
+    const data = await response.json();
+
+    res.status(200).json(data);
+  } catch (error: any) {
+    res.status(500).json({ error: 'Failed to fetch data from Airtable', details: error.message });
+  }
+}
